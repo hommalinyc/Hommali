@@ -1,0 +1,271 @@
+
+@font-face {
+  font-family: 'gemini';
+  src:url('fonts/Gemini-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'univers';
+  src:url('fonts/UniversCnBold') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'courier-prime-bold';
+  src:url('fonts/CourierPrime-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Cardo';
+  src:url('fonts/Cardo-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+
+body {
+margin: 0;
+padding: 0;
+height: 100vh;
+display: flex;
+/* overflow: hidden; */
+}
+
+/* =======================
+preloading page
+======================= */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #716b37; /* match your site */
+  color: #cff56f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.9s ease;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-text {
+  font-family: 'Cardo', serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* =======================
+HOMEPAGE STYLE
+======================= */
+#logo{
+position: absolute;
+top: 49%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 1;            /* below images */
+pointer-events: none;
+width: 300px;
+height: auto;
+}
+
+.background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/background.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -200;
+}
+
+.page{
+word-spacing: 20px;
+margin-bottom: -10px;
+}
+
+.deco-page{
+  font-family: "univers", sans-serif;
+  color: #80221a;  /*text color */
+  font-weight: bold;
+  text-decoration: none;
+  position: relative; /* needed for underline positioning */
+text-transform: uppercase;
+letter-spacing: 1.5px;
+}
+
+.deco-page::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #80221a; /* underline color */
+  transition: width 0.3s ease;
+}
+
+.deco-page:hover{
+  cursor: pointer;
+}
+
+.deco-page:hover::after{
+  width: 100%;
+}
+
+.deco-page.active::after{
+width: 100%;
+}
+
+.info{
+color:#80221a;
+margin-left:15px;
+margin-right: 5%;
+position: absolute;
+bottom: 40px;
+width: 49%;
+line-height: 25px;
+letter-spacing: 1.4px;
+font-family: "Cardo", serif;
+font-size: 16px;
+}
+
+.footer{
+font-family: "Cardo", serif;
+margin-left: 15px;
+font-size: 11px;   
+bottom:-7px;
+position: absolute;
+color: #80221a;
+}
+
+.links{
+color: #ae4563;  /*text color */
+font-style: italic;
+text-decoration: none;
+position: relative; /* needed for underline positioning */
+}
+
+.links::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  width: 0%;
+  height: 1.5px;
+  background: #ae4563; /* underline color */
+  transition: width 0.3s ease;
+}
+
+.links:hover::after{
+  width: 100%;
+}
+
+/* =======================
+INFO PAGE STYLE
+======================= */
+.info-p{
+line-height: 25px;
+font-family: "Cardo", serif;
+font-size: 16px;
+color:#feb1da;
+text-align: left;  
+margin-left: 5%;
+margin-right: 5%;
+}
+
+
+.info-box{
+position: fixed;
+display: flex;
+flex-direction: column;   /* stacks items vertically */
+align-items: center; 
+height:60%;
+width: 35%;
+bottom: 0;
+left: 50%;
+background-color: #34462a;
+z-index: 1000;
+transform: translateY(100%);
+transition: transform 0.7s ease;
+overflow: hidden;
+}
+
+.info-box.active{
+transform: translateY(0);
+}
+
+.info-box *{
+pointer-events: auto;
+}
+
+.map{
+margin-top: 5%;
+height: auto;
+width:90%;
+z-index: 1100;
+}
+
+.map-link{
+  color: #cc5073;
+  font-style: bold;
+  font-style: italic;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.map-link::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0%;
+  height: 1.5px;
+  background: #cc5073;
+  transition: width 0.3s ease;
+}
+
+.map-link:hover::after{
+  width: 100%;
+}
+
+
+/* =======================
+HAPPENINGS PAGE STYLE
+======================= */
+.happenings{
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 45%;
+  z-index: 1000;
+  overflow: hidden;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.happenings.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.happenings *{
+  pointer-events: auto;
+}
