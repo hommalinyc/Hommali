@@ -1,0 +1,806 @@
+
+@font-face {
+  font-family: 'gemini';
+  src:url('fonts/Gemini-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'univers';
+  src:url('fonts/UniversCnBold') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'courier-prime-bold';
+  src:url('fonts/CourierPrime-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cardo';
+  src:url('fonts/Cardo-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+
+body {
+margin: 0;
+padding: 0;
+height: 100vh;
+display: flex;
+/* overflow: hidden; */
+}
+
+/* =======================
+preloading page ^
+======================= */
+#preloader {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: #716b37;
+color: #cff56f;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 9999;
+transition: opacity 0.9s ease;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-text {
+  font-family: 'Cardo', serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* =======================
+HOMEPAGE STYLE
+======================= */
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -200;
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+  object-position: center;
+}
+
+.page{
+word-spacing: 20px;
+margin-bottom: -10px;
+}
+
+.deco-page{
+font-family: "univers", sans-serif;
+color: #80221a;  
+font-weight: bold;
+text-decoration: none;
+position: relative; 
+text-transform: uppercase;
+letter-spacing: 1.5px;
+}
+
+.deco-page::after{
+content: "";
+position: absolute;
+left: 0;
+bottom: -2px;
+width: 0%;
+height: 2px;
+background: #80221a;
+transition: width 0.3s ease;
+}
+
+.deco-page:hover{
+cursor: pointer;
+}
+
+.deco-page:hover::after{
+width: 100%;
+}
+
+.deco-page.active::after{
+width: 100%;
+}
+
+
+/* =======================
+HOMEPAGE FONT STYLE
+======================= */
+.info{
+color:#80221a;
+margin-left:15px;
+margin-right: 5%;
+position: absolute;
+bottom: 40px;
+width: 49%;
+line-height: 25px;
+letter-spacing: 1.4px;
+font-family: "Cardo", serif;
+}
+
+.footer{
+font-family: "Cardo", serif;
+margin-left: 15px;
+font-size: 11px;   
+bottom:-7px;
+position: absolute;
+color: #80221a;
+}
+
+.links{
+color: #ae4563;  /*text color */
+font-style: italic;
+text-decoration: none;
+position: relative; /* needed for underline positioning */
+}
+
+.links::after{
+content: "";
+position: absolute;
+left: 0;
+bottom: 1px;
+width: 0%;
+height: 1.5px;
+background: #ae4563; /* underline color */
+transition: width 0.3s ease;
+}
+
+.links:hover::after{
+  width: 100%;
+}
+
+
+
+/* ==============================================
+                  ADAPTIVE SCREEN
+============================================== */
+/* =======================
+Even bigger DESKTOP
+======================= */
+/* DESKTOP */@media (min-width: 1920px) and (max-width: 4480px){
+  /* ====
+  Hompage STYLE
+  ==== */
+  #logo img{
+  width: clamp(350px, 40vw, 450px);
+  }
+
+  .info{
+  width: 40%;
+  font-size:  clamp(16px, 1vw, 24px);
+  line-height: clamp(25px, 2vw, 38px);
+  letter-spacing: 1.4px;
+  }
+
+  /* ====
+  MAP FONT STYLE
+  ==== */
+  .info-p{
+  font-size:  clamp(16px, 1vw, 24px);
+  line-height: clamp(25px, 2vw, 38px);
+  font-family: "Cardo", serif;
+  color:#feb1da;
+  text-align: left;  
+  margin-left: 5%;
+  margin-right: 5%;
+  }
+
+  /* ====
+  MAP STYLE
+  ==== */
+  .info-box{
+  position: fixed;
+  display: flex;
+  flex-direction: column;   /* stacks items vertically */
+  align-items: center; 
+  height:clamp(550px, 40vw, 630px);
+  width:clamp(570px, 40vw, 600px);
+  bottom: 0;
+  left: 50%;
+  background-color: #34462a;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.7s ease;
+  overflow: hidden;
+  }
+
+  .info-box.active{
+  transform: translateY(0);
+  }
+
+  .info-box *{
+  pointer-events: auto;
+  }
+
+  .map{
+  margin-top: 5%;
+  height: auto;
+  width:90%;
+  z-index: 1100;
+  }
+
+  .map-link{
+    color: #cc5073;
+    font-style: bold;
+    font-style: italic;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+
+  .map-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0%;
+    height: 1.5px;
+    background: #cc5073;
+    transition: width 0.3s ease;
+  }
+
+  .map-link:hover::after{
+    width: 100%;
+  }
+
+
+  /* ====
+  HAPPENINGS PAGE STYLE
+  ==== */
+  .happenings{
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    height: auto;
+    width:clamp(550px, 40vw, 580px);
+    z-index: 1000;
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .happenings.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .happenings *{
+    pointer-events: auto;
+  }
+}
+
+
+/* =======================
+DESKTOP
+======================= */
+/* DESKTOP */@media (min-width: 1650px) and (max-width: 1919px){
+  /* ====
+  Hompage STYLE
+  ==== */
+  #logo img{
+  width: clamp(350px, 40vw, 450px);
+  }
+
+  .info{
+  width: 40%;
+  font-size:  clamp(16px, 1vw, 24px);
+  line-height: clamp(25px, 2vw, 38px);
+  letter-spacing: 1.4px;
+  }
+
+  /* ====
+  MAP FONT STYLE
+  ==== */
+  .info-p{
+  font-size:  clamp(16px, 1vw, 24px);
+  line-height: clamp(25px, 2vw, 38px);
+  font-family: "Cardo", serif;
+  color:#feb1da;
+  text-align: left;  
+  margin-left: 5%;
+  margin-right: 5%;
+  }
+
+  /* ====
+  MAP STYLE
+  ==== */
+  .info-box{
+  position: fixed;
+  display: flex;
+  flex-direction: column;   /* stacks items vertically */
+  align-items: center; 
+  height:clamp(470px, 40vw, 550px);
+  width:clamp(450px, 40vw, 570px);
+  bottom: 0;
+  left: 50%;
+  background-color: #34462a;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.7s ease;
+  overflow: hidden;
+  }
+
+  .info-box.active{
+  transform: translateY(0);
+  }
+
+  .info-box *{
+  pointer-events: auto;
+  }
+
+  .map{
+  margin-top: 5%;
+  height: auto;
+  width:90%;
+  z-index: 1100;
+  }
+
+  .map-link{
+    color: #cc5073;
+    font-style: bold;
+    font-style: italic;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+
+  .map-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0%;
+    height: 1.5px;
+    background: #cc5073;
+    transition: width 0.3s ease;
+  }
+
+  .map-link:hover::after{
+    width: 100%;
+  }
+
+
+  /* ====
+  HAPPENINGS PAGE STYLE
+  ==== */
+  .happenings{
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    height: auto;
+    width:clamp(450px, 40vw, 530px);
+    z-index: 1000;
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .happenings.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .happenings *{
+    pointer-events: auto;
+  }
+}
+
+/* =======================
+LAPTOP
+======================= */
+/* LAPTOP*/ @media (min-width: 900px) and (max-width: 1649px){
+  /* ====
+  homepage STYLE
+  ==== */
+  #logo img {
+  width: clamp(290px, 40vw, 350px);
+  }
+
+  .info{
+  width: 45%;
+  font-size: clamp(16px, 1vw, 18px);
+  line-height: clamp(28px, 2vw, 30px);
+  }
+
+  /* ====
+  MAP FONT STYLE
+  ==== */
+  .info-p{
+  line-height: clamp(28px, 2vw, 30px);
+  font-family: "Cardo", serif;
+  font-size: clamp (16px, 1vw, 18px);
+  color:#feb1da;
+  text-align: left;  
+  margin-left: 5%;
+  margin-right: 5%;
+  }
+
+  /* ====
+  MAP STYLE
+  ==== */
+  .info-box{
+  position: fixed;
+  display: flex;
+  flex-direction: column;   /* stacks items vertically */
+  align-items: center; 
+  height: clamp(415px, 40vw, 470px);
+  width: clamp(400px, 40vw, 450px);
+  bottom: 0;
+  left: 50%;
+  background-color: #34462a;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.7s ease;
+  overflow: hidden;
+  }
+
+  .info-box.active{
+  transform: translateY(0);
+  }
+
+  .info-box *{
+  pointer-events: auto;
+  }
+
+  .map{
+  margin-top: 5%;
+  height: auto;
+  width:90%;
+  z-index: 1100;
+  }
+
+  .map-link{
+    color: #cc5073;
+    font-style: bold;
+    font-style: italic;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+
+  .map-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0%;
+    height: 1.5px;
+    background: #cc5073;
+    transition: width 0.3s ease;
+  }
+
+  .map-link:hover::after{
+    width: 100%;
+  }
+
+
+  /* ====
+  HAPPENINGS PAGE STYLE
+  ==== */
+  .happenings{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    height: auto;
+    width: clamp(415px, 40vw, 430px);
+    z-index: 1000;
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .happenings.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .happenings *{
+    pointer-events: auto;
+  }
+}
+
+
+/* =======================
+TOUCH SCREEN
+======================= */
+/* TOUCH SCREEN*/ @media (min-width: 500px) and (max-width: 899px){
+  /* ====
+  Homepage STYLE
+  ==== */
+  #logo img{
+  width: clamp(260px, 40vw, 290px);
+  }
+
+  .info{
+  margin-left:20px;
+  position: absolute;
+  bottom: 45px;
+  width: 80%;
+  }
+
+    /* ====
+  MAP FONT STYLE
+  ==== */
+  .info-p{
+  line-height: 25px;
+  font-family: "Cardo", serif;
+  font-size: 16px;
+  color:#feb1da;
+  text-align: left;  
+  margin-left: 5%;
+  margin-right: 5%;
+  }
+
+  /* ====
+  MAP STYLE
+  ==== */
+ .info-box-box {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+}
+
+.info-box {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: clamp(400px, 40vw, 1000px);
+  width: clamp(390px, 40vw, 990px);
+  background-color: #34462a;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+  .info-box.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .info-box *{
+  pointer-events: auto;
+  }
+
+  .map{
+  margin-top: 5%;
+  height: auto;
+  width:90%;
+  z-index: 1100;
+  }
+
+  .map-link{
+    color: #cc5073;
+    font-style: bold;
+    font-style: italic;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+
+  .map-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0%;
+    height: 1.5px;
+    background: #cc5073;
+    transition: width 0.3s ease;
+  }
+
+  .map-link:hover::after{
+    width: 100%;
+  }
+  /* ====
+  HAPPENINGS PAGE STYLE
+  ==== */
+  .happenings{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    height: auto;
+    width: clamp(400px, 40vw, 430px);
+    z-index: 1000;
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .happenings.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .happenings *{
+    pointer-events: auto;
+  }
+}
+
+
+/* =======================
+PHONE
+======================= */
+/*PHONE*/ @media (min-width: 300px) and (max-width: 499px){
+  
+  /* ====
+  Homepage STYLE
+  ==== */
+  #logo{
+  top: 40%;
+  }
+
+  #logo img{
+  width: clamp(260px, 40vw, 265px);
+  }
+
+  .background{
+  background-size: contain;
+  background-position: center top;
+  }
+
+  .info{
+  margin-left:20px;
+  bottom: 45px;
+  width: 90%;
+  }
+
+    /* ====
+  MAP FONT STYLE
+  ==== */
+  .info-p{
+  line-height: 25px;
+  font-family: "Cardo", serif;
+  font-size: 16px;
+  color:#feb1da;
+  text-align: left;  
+  margin-left: 5%;
+  margin-right: 5%;
+  }
+
+  /* ====
+  MAP STYLE
+  ==== */
+ .info-box-box {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+}
+
+.info-box {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: clamp(370px, 40vw, 500px);
+  width: clamp(360px, 40vw, 490px);
+  background-color: #34462a;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+  .info-box.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .info-box *{
+  pointer-events: auto;
+  }
+
+  .map{
+  margin-top: 5%;
+  height: auto;
+  width:90%;
+  z-index: 1100;
+  }
+
+  .map-link{
+    color: #cc5073;
+    font-style: bold;
+    font-style: italic;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+
+  .map-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0%;
+    height: 1.5px;
+    background: #cc5073;
+    transition: width 0.3s ease;
+  }
+
+  .map-link:hover::after{
+    width: 100%;
+  }
+  /* ====
+  HAPPENINGS PAGE STYLE
+  ==== */
+  .happenings{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    height: auto;
+    width: clamp(360px, 40vw, 490px);
+    z-index: 1000;
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .happenings.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .happenings *{
+    pointer-events: auto;
+  }
+}
+
