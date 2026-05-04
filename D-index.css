@@ -93,6 +93,8 @@ HOMEPAGE STYLE
   height: 100%;
   object-fit: cover;       
   object-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .page{
@@ -671,7 +673,7 @@ TOUCH SCREEN
 /* =======================
 PHONE
 ======================= */
-/*PHONE*/ @media (min-width: 300px) and (max-width: 499px){
+/*PHONE*/ @media (min-width: 250px) and (max-width: 499px){
   
   /* ====
   Homepage STYLE
@@ -693,15 +695,17 @@ PHONE
   margin-left:20px;
   bottom: 45px;
   width: 90%;
+  font-size: 12px;
+  line-height: 18px;
   }
 
     /* ====
   MAP FONT STYLE
   ==== */
   .info-p{
-  line-height: 25px;
+  line-height: 18px;
   font-family: "Cardo", serif;
-  font-size: 16px;
+  font-size: 12px;
   color:#feb1da;
   text-align: left;  
   margin-left: 5%;
@@ -721,15 +725,15 @@ PHONE
 
 .info-box {
   position: fixed;
-  top: 40%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: clamp(370px, 40vw, 500px);
-  width: clamp(360px, 40vw, 490px);
+  height: clamp(280px, 40vw, 310px);
+  width: clamp(280px, 40vw, 310px);
   background-color: #34462a;
   z-index: 1000;
   opacity: 0;
@@ -781,11 +785,11 @@ PHONE
   ==== */
   .happenings{
     position: fixed;
-    top: 40%;
+    top: 32%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-4deg);
+    transform: translate(-50%, -50%) rotate(-3deg);
     height: auto;
-    width: clamp(360px, 40vw, 490px);
+    width: clamp(280px, 40vw, 310px);
     z-index: 1000;
     overflow: hidden;
 
