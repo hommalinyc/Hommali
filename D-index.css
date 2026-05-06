@@ -698,8 +698,8 @@ PHONE
   margin-left:20px;
   bottom: 45px;
   width: 90%;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 15px;
+  line-height: 24px;
   }
 
     /* ====
@@ -792,7 +792,7 @@ PHONE
     left: 50%;
     transform: translate(-50%, -50%) rotate(-3deg);
     height: auto;
-    width: clamp(280px, 40vw, 310px);
+    width: clamp(280px, 40vw, 315px);
     z-index: 1000;
     overflow: hidden;
 
