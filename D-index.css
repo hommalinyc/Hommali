@@ -788,11 +788,11 @@ PHONE
   ==== */
   .happenings{
     position: fixed;
-    top: 32%;
+    top: 34%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-3deg);
     height: auto;
-    width: clamp(290px, 40vw, 330px);
+    width: clamp(290px, 40vw, 340px);
     z-index: 1000;
     overflow: hidden;
 
