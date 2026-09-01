@@ -5,20 +5,20 @@ All code designed by Jenny Kim (Jenny-yah.com)-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"">
-    <meta name="description" content="Hommali — An intimate West Village Thai restaurant, reminiscent of the warmth and nostalgia of home. "/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
     <title>Hommali</title>
-
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.ico" sizes="64x64" type="image/x-icon">
 
 <!-- Link to JS -->
-<script src="D-interactive.js" defer></script>
+<script src="interactive.js" defer></script>
 
 <!-- Link to CSS -->
-<link rel="stylesheet" href="D-index.css"> 
+<link rel="stylesheet" href="index.css"> 
+
 
 
 <!-- Link to images -->
@@ -27,54 +27,202 @@ All code designed by Jenny Kim (Jenny-yah.com)-->
 <link rel="preload" href="images/logo.png" as="image">
 </head>
 
-<body style="overflow: hidden;"></body>
+<body style="overflow: hidden;">
 <div id="preloader">
-  <div class="loader-text">A love letter to Thailand...</div>
+  <div class="loader-text">
+    <span>A love letter to Thailand...</span>
+    <span class="loader-subtext">click anywhere to view images</span>
+  </div>
 </div>
 
 <div>
-<div id="logo"><img src="images/logo.png" fetchpriority="high" alt="Hom Mali Logo">
+<div id="logo"><img src="images/logo.png" fetchpriority="high" alt="Hom Mali Logo" style="width: 300px; height: auto;">
 </div>
+
 
 <div class="info">
     <div class="page">
         <p>
+            <a  class="deco-page" href="https://resy.com/cities/new-york-ny/venues/hommali?date=2026-08-31&seats=2" target="_blank" rel="noopener noreferrer">reserve</a>
+            <span class="deco-page menu-trigger">menu</span>
             <span class="deco-page map-trigger">info</span>
-            <a class="deco-page" href="https://resy.com/cities/new-york-ny/venues/hommali?date=2026-08-24&seats=2" target="_blank">reserve</a>
         </p>
     </div>
     <p>An expression of Thai roots, lovingly crafted with warmth and creativity.
     If you have any questions please reach us either by phone at 
-    <a href="tel:+1(646)4787151 " class="links">+1 (646) 478 7151 </a> or email at
-    <a class="links" href="mailto:info@hommalinyc.com">info@hommalinyc.com</a>.You can find us on social media
-    <a class="links" href="https://www.instagram.com/hommalinyc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@hommalinyc</a>.
-    </p>
+    <a href="tel:+1(646)4787151 " class="links link">+1 (646) 478 7151 </a> or email at
+    <a class="links link" href="mailto:info@hommalinyc.com">info@hommalinyc.com</a>.You can find us on social media
+    <a class="links link" href="https://www.instagram.com/hommalinyc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@hommalinyc</a>. <br><span class="expand">To view images please expand your window brower.</span></p> 
 </div>
 
 <div class="footer">
-<p>© 2026 Hommali. All rights reserved. Last Updated 4/27/2026</p>
+<p>© 2026 Hom Mali. All rights reserved. Last Updated 4/27/2026</p>
 </div>
 
+<!-- ======================
+IMAGE
+====================== -->
+<div class="home-image">
+<img class="image" src="images/image3.jpg"
+    style="--x: 48.45%; --y: 14.23%; --w: 30.60%; --r: -38deg;">
+<img class="image" src="images/image4.jpg"
+    style="--x: 55.80%; --y: 34.08%; --w: 18.60%; --r: -17deg;">
+<img class="image" src="images/image8.jpg"
+    style="--x: 40.45%; --y: 7.23%; --w: 18.60%; --r: 15deg;">
+<img class="image" src="images/image2.jpg"
+    style="--x: 7.44%; --y: 17.85%; --w: 18.60%; --r: 10deg;">
+<img class="image" src="images/image7.jpg"
+    style="--x: 15.79%; --y: 56.38%; --w: 30.60%; --r: -7deg;">
+<img class="image" src="images/image5.jpg"
+    style="--x: 23.32%; --y: 7.46%; --w: 18.60%; --r: -6deg;">
+<img class="image" src="images/image6.jpg"
+    style="--x: 72.17%; --y: 34.62%; --w: 18.60%; --r: 11deg;">
+<img class="image" src="images/image1.jpg"
+    style="--x: 38.92%; --y: 25.15%; --w: 20.60%; --r: -7deg;">
+</div>
+
+
+<!-- ======================
+Food & Beverage Menu BOX
+====================== -->
+<!-- food&drink slider button + menu description = menu-box -->
+<div class="menu-box">
+        <!-- Food and Drink Slider Button -->
+        <div class="option-container">
+            <button class="menu-back" type="button" aria-label="Back">back</button>
+            <div class="option">
+                <p class="menu-tab active" data-target="food">food</p>
+                <p class="menu-tab" data-target="drinks">drinks</p>
+                <span class="menu-slider"></span>
+            </div>
+        </div>
+
+    <!-- Food Menu Description -->
+    <div class="foodpanel panel active" id="food">
+        <div class="f-option-container"></div>
+
+        <div class="fd-layout">
+            <dl> Plate 
+                <dt>Market Lettuce Salad <span class=price>$18</span></dt>
+                <dd>sungolds, fried okra, roselle-lemongrass vinaigrette</dd>
+                    
+                <dt>Prik Larb Beef Tartare <span class=price>$26</span></dt>
+                <dd>dry-aged sirloin & beef heart, tripe cracker, northern larb spices</dd>
+
+                <dt>Koi Pla King Fish <span class=price>$24</span></dt>
+                <dd>cured + smoked fish tartare, toasted rice powder, isan herbs</dd>
+
+                <dt>Tom Yum Seafood Cocktail <span class=price>$26</span></dt>
+                <dd>razor Clam, Shrimp, Scallop</dd>
+
+                <dt>River Prawn <span class=price>$26</span></dt>
+                <dd>mango salad, fish sauce caramel & shrimp fu crumble</dd>
+
+                <dt>Tao Jiew Lon <span class=price>$20</span></dt>
+                <dd>fermented soybean-coconut dip, crispy battered vegetables</dd>
+            </dl>
+
+            <dl> Main
+                <dt>Lemongrass Chicken <span class=price>$39</span></dt>
+                <dd>charcoal grilled leg, stuffed pepper, carrot-dill fermented fish sauce</dd>
+                    
+                <dt>Tom Klong Tilefish <span class=price>$38</span></dt>
+                <dd>herb & fish broth, toasted rice powder</dd>
+                    
+                <dt>Panang Curry Beef Cheek <span class=price>$39</span></dt>
+                <dd>roasted peanut, makrut lime & thai basil</dd>
+            </dl>
+
+            <dl> To Share
+                <dt>Seafood Rice <span class=price>$46</span></dt>
+                <dd>grilled prawns, scallops, squid & crab, stir-fried rice, nam jim seafood</dd>
+                    
+                <dt>Hommali Five Spice Duck <span class=price>$58</span></dt>
+                <dd>dry-aged duck breast and jus, fermented chili, duck-fat lotus rice</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- Drink Menu Description -->
+    <div class="drinkpanel panel" id="drinks">
+        <div class="d-option-container"></div>
+        <div class="content fd-layout">
+            <dl> Cocktails
+                <dt>Fig <span class=price>$21</span></dt>
+                <dd>dry vermouth, plymouth gin, lillet blanc, elderflower liqueur</dd>
+                        
+                <dt>Tree <span class=price>$19</span></dt>
+                <dd>rice shochu, mastiha liqueur, fino sherry, lemon cloud </dd>
+
+                <dt>Tomato <span class=price>$22</span></dt>
+                <dd>vodka, rice wine, tomato, poblano liqueur, tamarind, thai chili</dd>
+
+                <dt>Passionfruit <span class=price>$19</span></dt>
+                <dd>lemongrass-infused mezcal, maraschino, cardamom bitters</dd>
+
+                <dt>Pandan <span class=price>$20</span></dt>
+                <dd>pandan-infused gin, melon liqueur, jackfruit & coconut cream</dd>
+
+                <dt>Banana <span class=price>$20</span></dt>
+                <dd>jasmine rice-infused whiskey, hazelnut liqueur, mole bitters</dd>
+
+                <dt>Oolong <span class=price>$20</span></dt>
+                <dd>tequilla, horchata oolong-infused vermouth, mushroom bitters</dd>
+
+                <dt>Pineapple <span class=price>$21</span></dt>
+                <dd>cachaca, pineapple amaro, campari, fino sherry, basil seeds </dd>
+            </dl>
+
+
+            <dl> Beer
+
+                <dt>Singha <span class=price>$9</span></dt>
+                <dd>Pale Lager</dd>
+                        
+                <dt>Saltfields <span class=price>$9 </span></dt>
+                <dd>Rice Lager</dd>
+                        
+                <dt>Fine IPA <span class=price>$9</span></dt>
+                <dd></dd>
+
+                <dt>Leo <span class=price>$8 </span></dt>
+                <dd>bottle</dd>
+            </dl>  
+
+            <dl> Non-alcoholic
+                <dt>Cha Chuck - Thai Ice Tea <span class=price>$9</span></dt>
+                <dd></dd>
+                        
+                <dt>Newbery St. Coffee Roaster x Hommali Tonic <span class=price>$9</span></dt>
+                <dd></dd>
+                        
+                <dt>Pandan-Chrysanthemum Soda <span class=price>$9</span></dt>
+                <dd></dd>
+            </dl> 
+        </div>
+    </div>
+</div>
 
 <!-- ======================
 INFO PAGE BOX
 ====================== -->
-<div class="info-box-box">
 <div class="info-box">
         <img class="map" src="images/map1.gif">
-        <div class="info-p"><p>We are located at <a class="map-link" href="https://www.google.com/maps/dir//Hommali,+28+7th+Ave+S,+New+York,+NY+10014/@40.7305197,-74.0048673,698m/data=!3m2!1e3!5s0x89c25992e6466303:0x565a5b02fa5f503!4m17!1m7!3m6!1s0x89c259003a2c1d9b:0x9ebeb1e72896a95d!2sHommali!8m2!3d40.7305197!4d-74.0048673!16s%2Fg%2F11mrn04_74!4m8!1m0!1m5!1m1!1s0x89c259003a2c1d9b:0x9ebeb1e72896a95d!2m2!1d-74.0048673!2d40.7305197!3e0?entry=ttu&g_ep=EgoyMDI2MDgxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">28 7th Ave South, New York, NY 10014</a></p>
+        <div class="info-p"><p>We're open daily from 12:30 PM to 11:00 PM
+        (closed from 3:00 PM to 4:00 PM)
+        at <a class="map-link" href="https://www.google.com/maps/dir//28+7th+Ave+S,+New+York,+NY+10014/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x89c25992e7b69caf:0x549ca0d13adb9ef7?sa=X&ved=1t:707&ictx=111" target="_blank" rel="noopener noreferrer">28 7th Ave South, New York, NY 10014</a></p>
         </div>
-</div>
 </div>
 
 <!-- ======================
-HAPPENINGS PAGE BOX
+HAPPENINGS PAGE BOX (temporary)
 ====================== -->
 <img class="happenings-box happenings" src="images/happening.gif">
 
-<div class="background">
-  <img src="images/background.png" fetchpriority="high" alt="">
+<div>
+  <div class="background"></div>
 </div>
+
 
 </body>
 </html>
