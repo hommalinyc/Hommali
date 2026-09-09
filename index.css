@@ -112,8 +112,8 @@ height: auto;
 top: calc(var(--home-image-top, 20%) - var(--home-image-lift, 0px));
 position: fixed;
 left: 50%;
-width: 1344px;
-aspect-ratio: 1344 / 520;
+width: 1324px;
+aspect-ratio: 1324 / 500;
 transform: translate(-50%, -50%);
 transform-origin: center center;
 z-index: 2;
@@ -169,10 +169,6 @@ line-height: 25px;
 letter-spacing: 1.4px;
 font-family: "Cardo", serif;
 font-size: 16px;
-}
-
-.expand{
-display: none;
 }
 
 .footer{
@@ -1103,12 +1099,6 @@ width:90%;
 }
 .home-image{
 display: none;
-}
-
-.expand{
-display: block;
-font-style: italic;
-color: #c8fa49;
 }
 }
 
